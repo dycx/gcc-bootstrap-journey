@@ -1,0 +1,130 @@
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for gawk... gawk
+checking for libphobos support... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gcc option to accept ISO C99... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for gnatbind... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada and is recent enough... no
+checking for gdc... no
+checking whether the D compiler works... no
+checking for cargo... cargo
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking for objdir... .libs
+configure: WARNING: using in-tree isl, disabling version check
+*** This configuration is not supported in the following subdirectories:
+     target-libquadmath gnattools gotools libgrust target-libada target-libphobos target-zlib target-libbacktrace target-libgfortran target-libgo target-libffi target-libgm2 target-libobjc target-libgrust target-libgomp target-libatomic target-libitm target-libsanitizer target-libvtv target-libssp
+    (Any other directories should still work fine.)
+checking for default BUILD_CONFIG... bootstrap-debug
+checking for --enable-vtable-verify... no
+checking for bison... no
+checking for byacc... no
+checking for yacc... no
+checking for bison... no
+checking for gm4... no
+checking for gnum4... no
+checking for m4... no
+checking for flex... no
+checking for lex... no
+checking for flex... no
+checking for makeinfo... no
+/root/code/gcc-bootstrap-journey/milestones/milestone-06-modern/src/gcc-14.2.0/missing: 81: makeinfo: not found
+checking for expect... no
+checking for runtest... no
+checking for ar... ar
+checking for as... as
+checking for dlltool... no
+checking for dsymutil... no
+checking for ld... (cached) /usr/bin/x86_64-linux-gnu-ld
+checking for lipo... no
+checking for nm... nm
+checking for ranlib... ranlib
+checking for strip... strip
+checking for windres... no
+checking for windmc... no
+checking for objcopy... objcopy
+checking for objdump... objdump
+checking for otool... no
+checking for readelf... readelf
+checking for -plugin option... --plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so
+checking for cc... cc
+checking for c++... c++
+checking for gcc... gcc
+checking for gfortran... no
+checking for gccgo... no
+checking for gdc... no
+checking for gm2... no
+checking for ar... no
+checking for ar... ar
+checking for as... no
+checking for as... as
+checking for dlltool... no
+checking for dlltool... no
+checking for dsymutil... no
+checking for dsymutil... no
+checking for ld... no
+checking for ld... ld
+checking for lipo... no
+checking for lipo... no
+checking for nm... no
+checking for nm... nm
+checking for objcopy... no
+checking for objcopy... objcopy
+checking for objdump... no
+checking for objdump... objdump
+checking for otool... no
+checking for otool... no
+checking for ranlib... no
+checking for ranlib... ranlib
+checking for readelf... no
+checking for readelf... readelf
+checking for strip... no
+checking for strip... strip
+checking for windres... no
+checking for windres... no
+checking for windmc... no
+checking for windmc... no
+checking where to find the target ar... host tool
+checking where to find the target as... host tool
+checking where to find the target cc... just compiled
+checking where to find the target c++... just compiled
+checking where to find the target c++ for libstdc++... just compiled
+checking where to find the target dlltool... host tool
+checking where to find the target dsymutil... host tool
+checking where to find the target gcc... just compiled
+checking where to find the target gfortran... host tool
+checking where to find the target gccgo... host tool
+checking where to find the target gdc... host tool
+checking where to find the target gm2... host tool
+checking where to find the target ld... host tool
+checking where to find the target lipo... host tool
+checking where to find the target nm... host tool
+checking where to find the target objcopy... host tool
+checking where to find the target objdump... host tool
+checking where to find the target otool... host tool
+checking where to find the target ranlib... host tool
+checking where to find the target readelf... host tool
+checking where to find the target strip... host tool
+checking where to find the target windres... host tool
+checking where to find the target windmc... host tool
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile
