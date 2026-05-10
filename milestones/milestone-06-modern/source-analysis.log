@@ -1,0 +1,2 @@
+Error: GCC source not found at /root/code/gcc-bootstrap-journey/scripts/../milestone-06-modern/src/gcc-14.2.0
+Please run milestone-06-modern/build.sh first to download source.
