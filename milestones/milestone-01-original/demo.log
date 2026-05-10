@@ -1,0 +1,94 @@
+==============================================
+GCC Bootstrap Evolution - Historical Demo
+==============================================
+
+=== Milestone 1: GCC 1.0 (1987) ===
+
+GCC 1.0 was the first GNU C Compiler, written by Richard Stallman.
+
+Key characteristics:
+  - Written in K&R C (not ANSI C)
+  - Only C language (no C++)
+  - Manual build process (no configure script)
+  - Manual 2-step bootstrap
+
+Build process (1987):
+  1. Copy config file:  cp config-sun3.h config.h
+  2. Edit Makefile:     CC = /usr/bin/cc
+  3. Build:             make
+  4. Bootstrap:         make clean && make CC=./gcc
+
+There was NO formal 'make bootstrap' target.
+No verification (no objcmp, no stage comparison).
+
+=== Milestone 2: GCC 2.0 (1992) - 3-Stage Bootstrap ===
+
+GCC 2.0 introduced autoconf and the canonical 3-stage bootstrap.
+
+The 3-stage process:
+  Stage 1: Compile GCC with system compiler (cc)
+  Stage 2: Compile GCC with Stage 1 compiler
+  Stage 3: Compile GCC with Stage 2 compiler
+  Compare: Stage 2 objects == Stage 3 objects?
+
+Why 3 stages and not 2?
+  A buggy Stage 1 could produce a buggy Stage 2 that
+  happens to compile itself correctly (fixed-point bug).
+  The third stage breaks this cycle.
+
+Demonstrating fixed-point verification concept:
+
+Stage 0 (source): 100
+Stage 1:          101
+Stage 2:          102
+Stage 3:          103
+
+Compare Stage 2 vs Stage 3: FAIL (different)
+
+If Stage 2 == Stage 3, the compiler has reached
+a fixed point and is (very likely) correct.
+
+=== Milestone 3: GCC 4.8 (2012) - C++ Self-Hosting ===
+
+GCC 4.8 was a watershed moment: the compiler was rewritten in C++.
+
+Before GCC 4.8:
+  Any C compiler → GCC (written in C) → GCC (self-hosted)
+
+After GCC 4.8:
+  Any C++ compiler → GCC (written in C++) → GCC (self-hosted)
+                   ↑
+           Now you need a C++ compiler!
+
+This changed the bootstrap dependency chain:
+  - You can't bootstrap GCC 4.8+ with just a C compiler
+  - You need an existing C++ compiler (g++, clang++, etc.)
+  - The 3-stage process works the same, but compiles C++ code
+
+Current system GCC is written in C++:
+  gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+
+Proof: GCC source files are .cc (C++), not .c (C):
+  gcc/c/c-parser.cc    (C frontend parser)
+  gcc/cp/class.cc      (C++ frontend)
+  gcc/tree-ssa-ccp.cc  (SSA optimization)
+
+=== Milestone 4: Modern GCC (14.x) - Full Bootstrap ===
+
+Modern GCC bootstrap prerequisites:
+  - C++ compiler (g++ or clang++)
+  - GMP, MPFR, MPC, ISL libraries
+  - flex, bison, texinfo
+
+The process:
+  1. ./contrib/download_prerequisites
+  2. mkdir build && cd build
+  3. ../configure --enable-languages=c,c++ --enable-bootstrap
+  4. make -j$(nproc) bootstrap
+
+This runs the same 3-stage process introduced in 1992,
+but now compiling C++ source code instead of C.
+
+==============================================
+Historical demo complete!
+==============================================
