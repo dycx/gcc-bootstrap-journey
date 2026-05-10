@@ -1,0 +1,15 @@
+# GCC source and build artifacts (too large for git)
+milestones/*/src/
+milestones/*/build/
+milestones/*/install/
+milestones/*/logs/
+
+# Keep the documentation and scripts
+!milestones/*/*.md
+!milestones/*/*.sh
+!milestones/*/*.log
+!scripts/
+
+# OS files
+.DS_Store
+*~
